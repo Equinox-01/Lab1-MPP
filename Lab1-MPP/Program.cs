@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1_MPP
@@ -10,6 +7,10 @@ namespace Lab1_MPP
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Количество потоков - ");
+
+            var taskQueue = new TaskQueue(Console.Read());
         }
     }
 }
