@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Lab1_MPP.ThreadPool
@@ -10,11 +11,14 @@ namespace Lab1_MPP.ThreadPool
 
         public TaskQueue(int capacity)
         {
-            for (int i = 0; i < capacity; i++)
-            {
-                threads.Add(new ThreadUsable());
-                threads[i].inUse = false;
-            }
+            if (capacity <= 0)
+                throw new InvalidOperationException("Недопустимый параметр конструктора.");
+            else
+                for (int i = 0; i < capacity; i++)
+                {
+                    threads.Add(new ThreadUsable());
+                    threads[i].inUse = false;
+                }
         }
 
         public void EnqueueTask(TaskDelegate task)

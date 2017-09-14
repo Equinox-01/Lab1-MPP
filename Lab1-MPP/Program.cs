@@ -9,13 +9,21 @@ namespace Lab1_MPP
         static void Main(string[] args)
         {
             Console.Write("Количество потоков - ");
-            var tQueue = new ThreadPool.TaskQueue(int.Parse(Console.ReadLine()));
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
-            tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+            try
+            {
+                var tQueue = new ThreadPool.TaskQueue(int.Parse(Console.ReadLine()));
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+                tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+            }
         }
     }
 }
