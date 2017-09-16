@@ -46,8 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandInterruption.cs" />
-    <Compile Include="ThreadPool\TaskQueue.cs" />
-    <Compile Include="ThreadPool\ThreadUsable.cs" />
+    <Compile Include="TaskQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

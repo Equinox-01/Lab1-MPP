@@ -11,7 +11,7 @@ namespace Lab1_MPP
             Console.Write("Количество потоков - ");
             try
             {
-                var tQueue = new ThreadPool.TaskQueue(int.Parse(Console.ReadLine()));
+                var tQueue = new TaskQueue(int.Parse(Console.ReadLine()));
                 tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
                 tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
                 tQueue.EnqueueTask(RandInterruption.GetRandomInterrupt);
